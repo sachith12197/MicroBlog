@@ -1,13 +1,25 @@
 import React from 'react';
 
-const Post = () => (
+const Post = ({_id, text, timestamp, onDelete}) => (
     <div className="post">
-                <p>nejvnrjvn nejrejrnj njnrje jnreko3i3fmrjenjrn enrjernfnfern</p>
+        <p>{text}</p>
 
-                <p className="Timestamp">Sat Jul 13 2019 09:29:19 GMT+0530</p>
-                <button className="section-btn add-btn">Edit</button>
-                <button className="section-btn del_btn">Delete</button>
-              </div>
+        <p className="timestamp">{timestamp}</p>
+        <button className="section-btn add-btn">Edit</button>
+        <button className="section-btn del_btn" onClick={() => onDelete(_id)}>Delete</button>
+    </div>
 );
 
 export default Post;
+
+/*const Post = ({text, timestamp}) => (
+    <div className="post">
+        <p>{text}</p>
+
+        <p className="timestamp">{timestamp}</p>
+        <button className="section-btn add-btn">Edit</button>
+        <button className="section-btn del_btn">Delete</button>
+    </div>
+);
+
+export default Post;*/
